@@ -1,0 +1,102 @@
+.main__header {
+  position: relative;
+  height: 88.5vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f6f7f8;
+  background: url(../img/baner-main.jpg);
+  background-size: cover;
+  animation: headerBaner 1.3s ease-in-out forwards;
+  transform: translateY(-120%);
+  opacity: 0;
+  z-index: 10;
+}
+
+@keyframes headerBaner {
+  0% {
+    transform: translateY(-120%);
+  }
+  40% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.main__header h1 {
+  font-size: 45px;
+  margin-bottom: 40px;
+}
+
+.main__header p {
+  color: #f6f7f8;
+  text-shadow: inset 1px 1px 1px #f73232;
+  opacity: 0;
+  font-size: 20px;
+  margin-bottom: 30px;
+  animation: showHeaderBaner 1s ease-in-out 3s forwards;
+}
+
+.header-span-title {
+  opacity: 0;
+  color: #f73232;
+  text-shadow: 0 0 3px #f6f7f8;
+  animation: showHeaderBaner 1s ease-in-out 1s forwards;
+}
+.header-span-text {
+  color: #f6f7f8;
+  text-shadow: 0 0 3px #f73232;
+  opacity: 0;
+  animation: showHeaderBaner 1.5s ease-in-out 2s forwards;
+}
+.main__header button {
+  position: relative;
+  width: 200px;
+  height: 50px;
+  font-size: 14px;
+  opacity: 0;
+  animation: showHeaderBaner 0.5s ease-in-out 4s both;
+
+  color: #ffffff;
+  background-color: #8f2f2f;
+  border: none;
+  border-radius: 4px;
+}
+
+.main__header button::before {
+  content: "";
+  position: absolute;
+  width: 99%;
+  height: 99%;
+  left: 0;
+  top: 0;
+  background-color: #ff0000;
+  box-shadow: 0 0 25px #ff0000;
+  opacity: 0;
+  animation: heart 1s ease-in-out 3s infinite alternate;
+  z-index: -1;
+}
+
+@keyframes showHeaderBaner {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes heart {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0.9;
+  }
+}
