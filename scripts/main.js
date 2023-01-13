@@ -1,10 +1,10 @@
 const root = document.getElementById("root");
 const header = document.getElementById("header-nav");
 const localUser = JSON.parse(localStorage.getItem("user"));
-const currentPage = localUser?.currentPage || currentUser.currentPage;
+const currentPage = localUser?.currentPage || currentUser?.currentPage || "main";
 function firstRender() {
   includeHTML("components/header-nav.html", header, renderNavItems);
-  currentUser.renderPage(localUser.currentPage, () => {
+  currentUser.renderPage(currentPage, () => {
     currentUser.serverSet();
   });
 }

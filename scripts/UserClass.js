@@ -19,7 +19,6 @@ class User {
 
   async serverSet() {
     const user = await Parse.User.current();
-    console.log(localUser);
     this.user = user;
     this.isLoading = false;
     this.isAdmin = !user
