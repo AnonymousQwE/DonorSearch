@@ -1,0 +1,45 @@
+<form name="register" style="border: 1px solid #ccc">
+  <div class="container">
+    <div class="imgcontainer">
+      <img src="../img/newLogoIcon.svg" alt="Logo" class="logo" />
+    </div>
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" required />
+
+    <label for="username"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="username" required />
+    <label for="fullname"><b>Полное имя или название клиники</b></label>
+    <input
+      type="text"
+      placeholder="Полное имя или название клиники"
+      name="fullname"
+      required
+    />
+
+    <label for="password"><b>Password</b></label>
+    <input
+      type="password"
+      placeholder="Enter Password"
+      name="password"
+      required
+    />
+
+    <label>
+      <select required name="type">
+        <option value="donor">Я являюсь донором</option>
+        <option value="clinic" selected>Я представляю клинику</option>
+      </select>
+    </label>
+
+    <div class="clearfix">
+      <button id="actionBtn" type="submit" class="signupbtn">
+        Зарегистрироваться
+      </button>
+    </div>
+    <p class="form-footer">
+      Уже есть аккаунт?
+      <a id="changeActionBtn" style="color: rgb(0, 128, 255)">Войти</a>.
+    </p>
+  </div>
+</form>

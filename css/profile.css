@@ -1,0 +1,29 @@
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+}
+.profile-photo {
+  width: 7vw;
+  height: 7vw;
+  border: 1px solid rgba(255, 0, 0, 0.316);
+  border-radius: 50%;
+}
+.profile-photo-text {
+  width: 7vw;
+  font-size: 0.5rem;
+  text-align: center;
+  border: 1px solid rgba(255, 0, 0, 0.316);
+  cursor: pointer;
+}
+
+.profile-item {
+  font-size: 15px;
+  border-bottom: 1px solid #000;
+}
+.profile-item__current {
+  margin-right: 5px;
+  font-size: 17px;
+  font-weight: 800;
+}

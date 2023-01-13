@@ -1,33 +1,17 @@
 .main__header {
   position: relative;
   height: 88.5vh;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: #f6f7f8;
-  background: url(../img/baner-main.jpg);
+  background: url(../img/baner-main1.jpg);
   background-size: cover;
   animation: headerBaner 1.3s ease-in-out forwards;
   transform: translateY(-120%);
   opacity: 0;
-  z-index: 10;
-}
-
-@keyframes headerBaner {
-  0% {
-    transform: translateY(-120%);
-  }
-  40% {
-    opacity: 0;
-  }
-  80% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 .main__header h1 {
@@ -69,7 +53,6 @@
   border: none;
   border-radius: 4px;
 }
-
 .main__header button::before {
   content: "";
   position: absolute;
@@ -98,5 +81,21 @@
   }
   100% {
     opacity: 0.9;
+  }
+}
+
+@keyframes headerBaner {
+  0% {
+    transform: translateY(-120%);
+  }
+  40% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

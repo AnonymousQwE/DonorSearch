@@ -1,0 +1,35 @@
+.admin {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+table {
+  border: 1px solid #333;
+  width: 40vw;
+}
+
+table,
+td {
+  /* border: 1px solid #333; */
+  text-align: center;
+}
+
+th,
+tfoot {
+  background-color: rgb(255, 30, 30);
+  color: #fff;
+  font-size: 0.8rem;
+  margin: 5px;
+}
+
+tr {
+  background-color: rgba(255, 0, 0, 0.224);
+  transition: 0.3s;
+}
+
+tr:hover {
+  cursor: default;
+  background-color: rgb(255, 33, 33);
+}
