@@ -8,8 +8,6 @@ navAuthItems = [
   { title: "Список доступных клиник", link: "clinic-list" },
 ];
 
-
-
 function createNavButtons(listBtn) {
   return listBtn.map((navItem) => {
     const button = document.createElement("button");
@@ -17,6 +15,10 @@ function createNavButtons(listBtn) {
     button.classList.add("button");
     return button;
   });
+}
+function rerenderHome() {
+  homeRender();
+  currentUser.isAuth ? location.reload() : "";
 }
 
 function renderNavItems() {
@@ -28,7 +30,7 @@ function renderNavItems() {
   buttons.map((b, i) => {
     navList.append(b);
     b.addEventListener("click", () => {
-      i === 0 ? firstRender() : currentUser.renderPage(currentNav[i].link);
+      i === 0 ? rerenderHome() : currentUser.renderPage(currentNav[i].link);
     });
   });
 
@@ -55,6 +57,7 @@ function formAction(action) {
 
   switch (action) {
     case "register":
+      console.log("register")
       includeHTML("components/register-form.html", dialogContent, () => {
         actionBtn = document.querySelector("#actionBtn");
         changeActionBtn = document.getElementById("changeActionBtn");
@@ -97,6 +100,7 @@ function formAction(action) {
       break;
 
     case "login":
+      console.log("login")
       includeHTML("components/login-form.html", dialogContent, () => {
         actionBtn = document.querySelector("#actionBtn");
         changeActionBtn = document.getElementById("changeActionBtn");
@@ -130,6 +134,7 @@ function formAction(action) {
       });
       break;
     case "profile":
+      console.log("profile")
       includeHTML("components/user-profile.html", dialogContent, ProfileAction);
       break;
     default:

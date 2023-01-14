@@ -6,6 +6,12 @@
 @import "./header.css";
 @import "./auth.css";
 @import "./where.css";
+@import "./bonus.css";
+
+:root {
+  --main-color: red;
+  --sec-color: rgb(188, 52, 52);
+}
 
 * {
   margin: 0;

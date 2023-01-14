@@ -3,18 +3,19 @@
   align-items: center;
   gap: 30px;
   width: 100%;
+  cursor: default !important;
 }
 .profile-photo {
   width: 7vw;
   height: 7vw;
-  border: 1px solid rgba(255, 0, 0, 0.316);
+  border: 1px solid var(--sec-color);
   border-radius: 50%;
 }
 .profile-photo-text {
   width: 7vw;
   font-size: 0.5rem;
   text-align: center;
-  border: 1px solid rgba(255, 0, 0, 0.316);
+  border: 1px solid var(--sec-color);
   cursor: pointer;
 }
 
@@ -26,4 +27,36 @@
   margin-right: 5px;
   font-size: 17px;
   font-weight: 800;
+}
+
+.profile-username {
+}
+
+.profile-type {
+}
+.profile-button__admin {
+  color: var(--sec-color);
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--sec-color);
+  transition: 0.3s;
+}
+.profile-button__admin:hover {
+  color: var(--main-color);
+  border-bottom: 2px solid var(--main-color);
+  font-weight: 600;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+.profile-button__logout {
+  color: var(--sec-color);
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--sec-color);
+  transition: 0.3s;
+}
+.profile-button__logout:hover {
+  color: var(--main-color);
+  border-bottom: 2px solid var(--main-color);
+  font-weight: 600;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
 }

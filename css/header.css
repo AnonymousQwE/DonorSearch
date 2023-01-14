@@ -47,21 +47,30 @@
   font-size: 14px;
   opacity: 0;
   animation: showHeaderBaner 0.5s ease-in-out 4s both;
+  box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.2);
 
   color: #ffffff;
   background-color: #8f2f2f;
   border: none;
   border-radius: 4px;
+  transition: bacground 0.3s;
+}
+.main__header button:hover {
+  background-color: var(--main-color);
+}
+.main__header button:active {
+  transform: translate(1px, 1px);
+  box-shadow: none;
 }
 .main__header button::before {
   content: "";
   position: absolute;
-  width: 99%;
-  height: 99%;
+  width: 100%;
+  height: 100%;
   left: 0;
   top: 0;
-  background-color: #ff0000;
-  box-shadow: 0 0 25px #ff0000;
+  background-color: var(--main-color);
+  box-shadow: 0 0 25px var(--main-color);
   opacity: 0;
   animation: heart 1s ease-in-out 3s infinite alternate;
   z-index: -1;

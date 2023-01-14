@@ -1,12 +1,17 @@
 const ProfileAction = () => {
-  formAction("profile");
-  const usernameHTML = document.querySelector("#username");
   const typeHTML = document.querySelector("#type");
   const logOutBtn = document.getElementById("profileLogout");
   const profileAdminBtn = document.getElementById("profileAdmin");
+  const profileUsername = document.querySelector(".profile-username");
 
   currentUser.isAdmin ? "" : profileAdminBtn.classList.add("none");
+  profileUsername.innerHTML =
+    currentUser.user.attributes.role === "clinic"
+      ? `Название клиники: <span class="profile-item__current" id="username"></span>`
+      : `Ваше полное имя: <span class="profile-item__current" id="username"></span>`;
+  const usernameHTML = document.querySelector("#username");
   usernameHTML.innerHTML = currentUser.user.attributes.fullname;
+
   typeHTML.innerHTML =
     currentUser.user.attributes.role === "donor"
       ? "Донором"

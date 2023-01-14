@@ -28,10 +28,19 @@
   align-items: center;
 }
 .button {
+  width: 100%;
   color: #4e5355;
-  font-size: 14px;
+  font-size: 16px;
+  font-weight: 600;
   background-color: #ffffff;
   border: none;
+  transition: 0.3s;
+}
+.button:hover {
+  transform: translate(-1px, -1px);
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  color: var(--main-color);
 }
 .type__a a {
   color: #4e5355;
@@ -41,19 +50,28 @@
   text-decoration: none;
 }
 .type {
-  color: #f73232;
+  color: gray;
   background-color: #ffffff;
   border: none;
 }
 
 .login {
-  width: 70px;
-  height: 35px;
   font-size: 13px;
+  padding: 10px 10px;
   color: #ffffff;
-  background-color: #f73232;
+  background-color: var(--sec-color);
   border: none;
   border-radius: 6px;
+  box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+.login:hover {
+  background-color: var(--main-color);
+  cursor: pointer;
+}
+.login:active {
+  transform: translate(1px, 1px);
+  box-shadow: none;
 }
 
 @keyframes showHeaderNav {
@@ -64,5 +82,3 @@
     opacity: 1;
   }
 }
-
-

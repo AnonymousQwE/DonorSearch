@@ -27,7 +27,8 @@
 .auth-dialog {
   min-width: 500px;
   max-width: 500px;
-  max-height: 530px;
+  max-height: 500px;
+  overflow-y: scroll;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -38,36 +39,36 @@
 /* Bordered form */
 form {
   cursor: default;
+  padding: 10px 30px;
   border: 3px solid #f1f1f1;
 }
 
 /* Full-width inputs */
 input[type="text"],
 input[type="password"] {
+  font-size: 20px;
   width: 100%;
-  padding: 12px 20px;
+  padding: 15px 20px;
   margin: 8px 0;
-  display: inline-block;
+  display: block;
   border: 1px solid #ccc;
   box-sizing: border-box;
   text-align: center;
 }
 
-/* Set a style for all buttons */
-/* button {
-  background-color: #4caf50;
-  color: white;
-  padding: 5px 5px;
-  margin: 0px 0;
+.form-button {
+  background: none;
   border: none;
-  cursor: pointer;
-  width: 100%;
-  
-} */
-
+  border-bottom: 1px solid var(--main-color);
+  transition: 0.3s;
+  padding: 5px;
+}
 /* Add a hover effect for buttons */
-button:hover {
-  opacity: 0.8;
+.form-button:hover {
+  color: var(--main-color);
+  font-weight: 600;
+  border-bottom: 2px solid var(--main-color);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
 
 /* Center the avatar image inside this container */
@@ -96,62 +97,13 @@ span.psw {
   padding: 5px 0;
 }
 
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-  span.psw {
-    display: block;
-    float: none;
-  }
-  .cancelbtn {
-    width: 100%;
-  }
+#changeActionBtn {
+  color: var(--sec-color);
+  transition: 0.5s;
+}
 
-  .authPanel {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
-    width: 100%;
-    top: 3.5rem;
-    background-color: rgba(255, 255, 255, 0.49);
-    border: 1px solid rgb(70, 70, 70);
-    padding: 10px;
-
-    font-size: 15px;
-    color: rgba(255, 0, 0, 0.542);
-    transition: 1.5s;
-  }
-  .opac0 {
-    opacity: 0;
-    display: none !important;
-    transition: 1.5s;
-  }
-  .userProfile {
-    display: flex;
-    gap: 5px;
-  }
-  .userProfile-username span {
-    padding-left: 5px;
-  }
-
-  .userProfile-image {
-    width: 50px;
-    height: 50px;
-  }
-
-  .auth {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 5px;
-    height: 100%;
-    margin: 10px;
-
-    text-align: center;
-    transition: 1.5s !important;
-  }
-  .auth-btn {
-    margin-top: 5px;
-  }
+#changeActionBtn:hover {
+  cursor: pointer;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  color: var(--sec-color);
 }
