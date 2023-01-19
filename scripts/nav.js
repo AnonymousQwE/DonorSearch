@@ -34,8 +34,11 @@ function renderNavItems() {
     });
   });
 
+  const logo = document.querySelector(".nav__logo");
   const authButton = createAuthBtn();
   const authBlock = document.querySelector("#authBlock");
+
+  logo.addEventListener("click", rerenderHome);
 
   authButton.addEventListener("click", () => {
     const dialogContent = document.querySelector("#dialog-content");
@@ -57,7 +60,7 @@ function formAction(action) {
 
   switch (action) {
     case "register":
-      console.log("register")
+      console.log("register");
       includeHTML("components/register-form.html", dialogContent, () => {
         actionBtn = document.querySelector("#actionBtn");
         changeActionBtn = document.getElementById("changeActionBtn");
@@ -80,6 +83,7 @@ function formAction(action) {
           user.set("email", email);
           user.set("fullname", fullname);
           user.set("role", type);
+          user.set("image", "/../img/newLogoIcon.svg");
 
           user
             .signUp()
@@ -100,7 +104,7 @@ function formAction(action) {
       break;
 
     case "login":
-      console.log("login")
+      console.log("login");
       includeHTML("components/login-form.html", dialogContent, () => {
         actionBtn = document.querySelector("#actionBtn");
         changeActionBtn = document.getElementById("changeActionBtn");
@@ -134,7 +138,7 @@ function formAction(action) {
       });
       break;
     case "profile":
-      console.log("profile")
+      console.log("profile");
       includeHTML("components/user-profile.html", dialogContent, ProfileAction);
       break;
     default:

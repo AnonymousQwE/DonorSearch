@@ -31,6 +31,46 @@ class User {
     localStorage.user = JSON.stringify(this);
     return this.user;
   }
+  async updateUserData(data, typedata) {
+    const query = new Parse.Query("User");
+    query.equalTo("fullname", this.user.attributes.fullname);
+    console.log(query);
+    query
+      .first()
+      .then(function (user) {
+        if (user) {
+          console.log(
+            "User found with name: " +
+              user.get("fullname") +
+              " and image: " +
+              user.get("image")
+          );
+          update(user);
+        } else {
+          console.log("Nothing found, please try again");
+        }
+      })
+      .catch(function (error) {
+        console.log("Error: " + error.code + " " + error.message);
+      });
+
+    function update(foundUser) {
+      foundUser.set(typedata, data);
+      foundUser
+        .save()
+        .then(function (user) {
+          console.log(
+            "User updated! Name: " +
+              user.get("fullname") +
+              " and new image: " +
+              user.get("image")
+          );
+        })
+        .catch(function (error) {
+          console.log("Error: " + error.message);
+        });
+    }
+  }
 
   renderPage(component, scriptAfterLoading) {
     this.currentPage = component;

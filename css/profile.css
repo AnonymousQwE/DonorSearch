@@ -1,9 +1,19 @@
 .profile {
   display: flex;
   align-items: center;
-  gap: 30px;
-  width: 100%;
+  justify-content: space-between;
+  /* width: 100%; */
+  gap: 10px;
   cursor: default !important;
+}
+.fancybox__content {
+  padding: 10px !important;
+}
+.profile-image-block {
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+  align-items: center;
 }
 .profile-photo {
   width: 7vw;
@@ -18,22 +28,35 @@
   border: 1px solid var(--sec-color);
   cursor: pointer;
 }
+.profile-photo-input {
+  font-size: 8px !important;
+  text-align: center;
+  padding: 2px !important;
+  margin: 0 !important;
+  border: none !important;
+  border-bottom: 1px solid var(--sec-color) !important;
+}
+.profile-photo-save {
+  color: var(--sec-color);
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--sec-color);
+  transition: 0.3s;
+  font-size: 8px;
+}
 
 .profile-item {
   font-size: 15px;
-  border-bottom: 1px solid #000;
+  /* width: 40%; */
+  text-align: center;
 }
 .profile-item__current {
   margin-right: 5px;
   font-size: 17px;
   font-weight: 800;
+  border-bottom: 1px solid #000;
 }
 
-.profile-username {
-}
-
-.profile-type {
-}
 .profile-button__admin {
   color: var(--sec-color);
   background: none;
@@ -47,6 +70,14 @@
   font-weight: 600;
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
+.profile-button__admin:focus {
+  outline: none;
+  border: none;
+}
+.profile-button__admin:focus-visible {
+  outline: none;
+  border: none;
+}
 .profile-button__logout {
   color: var(--sec-color);
   background: none;
@@ -59,4 +90,50 @@
   border-bottom: 2px solid var(--main-color);
   font-weight: 600;
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 800px) {
+  .profile {
+    gap: 20px;
+  }
+  .fancybox__container {
+    padding: 0 !important;
+  }
+  .profile-photo-text {
+    display: none;
+  }
+  .profile-photo {
+    width: 80px;
+    height: 80px;
+  }
+  #dialog-content {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .auth-dialog {
+    width: 80%;
+  }
+  .profile {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+  }
+  .profile-photo {
+    width: 150px;
+    height: 150px;
+  }
+  .profile-item {
+    font-size: 20px;
+  }
+  .profile-item__current {
+    font-size: 25px;
+  }
+  .profile-button__admin {
+    font-size: 18px;
+  }
+  .profile-button__logout {
+    font-size: 18px;
+  }
 }

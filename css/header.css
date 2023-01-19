@@ -53,6 +53,7 @@
   background-color: #8f2f2f;
   border: none;
   border-radius: 4px;
+  cursor: pointer;
   transition: bacground 0.3s;
 }
 .main__header button:hover {
@@ -106,5 +107,16 @@
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+@media (max-width: 760px) {
+  .header-span-text {
+    font-size: 30px;
+  }
+  .main__header p {
+    font-size: 15px;
+  }
+  .header-span-title {
+    font-size: 40px;
   }
 }

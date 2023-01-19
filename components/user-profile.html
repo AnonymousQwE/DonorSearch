@@ -1,15 +1,21 @@
 <div id="userProfile" class="profile">
-  <div>
+  <div class="profile-image-block">
     <img src="/../img/newLogoIcon.svg" alt="Profile" class="profile-photo" />
     <p class="profile-photo-text">Изменить картинку</p>
+    <input
+      class="profile-photo-input none"
+      type="text"
+      placeholder="Вставьте ссылку"
+    />
+    <button class="profile-photo-save none">Сохранить картинку</button>
   </div>
   <p class="profile-item profile-username">
-    
-    <span class="profile-item__current" id="username">AlexElizarev</span>
+    <span class="profile-item__current" id="username"></span>
   </p>
-  <p class="profile-item profile-type">
-    Вы являетесь: <span class="profile-item__current" id="type">Донором</span>
-  </p>
+  <div class="profile-item profile-type">
+    <p>Вы являетесь:</p>
+    <p class="profile-item__current" id="type"></p>
+  </div>
 </div>
 <button id="profileAdmin" class="profile-button__admin">Админ Панель</button>
 <button id="profileLogout" class="profile-button__logout">
