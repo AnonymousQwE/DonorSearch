@@ -9,7 +9,7 @@ navAuthItems = [
     link: "donor-list",
     script: donorsList,
   },
-  { title: "Список доступных клиник", link: "clinic-list", script: "" },
+  { title: "Список доступных клиник", link: "clinic-list", script: clinicsList },
 ];
 
 function createNavButtons(listBtn) {

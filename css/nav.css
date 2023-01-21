@@ -75,7 +75,7 @@
   background-color: var(--main-color);
   cursor: pointer;
 }
-label {
+[for="burger"] {
   position: fixed;
 }
 
@@ -145,7 +145,8 @@ label {
   .main__nav {
     position: relative;
     justify-content: end;
-    padding: 10px;
+    padding: 0px;
+    margin: 0;
   }
   .nav__logo {
     width: 300px;
@@ -176,5 +177,8 @@ label {
   #burger:checked ~ [for="burger"] span::after {
     top: 0;
     transform: rotate(0deg);
+  }
+  .login {
+    margin-right: 10px;
   }
 }

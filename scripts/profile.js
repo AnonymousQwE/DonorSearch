@@ -15,7 +15,7 @@ const ProfileAction = () => {
   currentUser.isAdmin ? "" : profileAdminBtn.classList.add("none");
   bloodHTML.innerHTML =
     currentUser.user.attributes.role === "donor"
-      ? `<p>Ваша группа крови:</p> <p class="profile-item__current" id="blood">${currentUser.user.attributes.bloodType}</p>`
+      ? `<p>Ваша группа крови:</p> <p class="profile-item__current" id="blood">${currentUser.user.attributes.bloodType + currentUser.user.attributes.bloodRez}</p>`
       : "";
   donationHTML.innerHTML =
     currentUser.user.attributes.role === "donor"

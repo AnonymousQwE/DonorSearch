@@ -1,5 +1,7 @@
 function donorsList() {
-  function filterTрroughButton() {
+  async function filterTрroughButton() {
+    await GetDonors();
+
     const buttons = document.querySelectorAll(".button-filter");
     const types = document.querySelectorAll(".type");
 
@@ -45,7 +47,6 @@ function donorsList() {
       }
     });
   });
-  GetDonors();
 }
 const search = () => {
   const searchBox = document.getElementById("input").value.toUpperCase();
@@ -68,8 +69,8 @@ const search = () => {
   }
 };
 
-let donorsServerList;
 async function GetDonors() {
+  let donorsServerList;
   const query = new Parse.Query("User");
   try {
     let donors = await query.find();
@@ -80,9 +81,9 @@ async function GetDonors() {
     console.log("error");
   }
   const donorsTable = document.getElementById("tableDonors");
-  const donorsHTML = donorsServerList.map((donor) => {
+  const donorsHTML = donorsServerList.map((donor, id) => {
     const donorHTML = `<tr class="type">
-    <td>1</td>
+    <td>${id + 1}</td>
     <td>
       <img
         src=${donor.attributes.image}

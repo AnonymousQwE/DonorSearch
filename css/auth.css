@@ -61,12 +61,15 @@ input[type="password"] {
   padding: 5px;
   margin-top: 15px;
 }
-.auth-btn{
+.auth-btn {
   margin-top: 20px;
 }
 .select-type {
   position: relative !important;
 }
+/* .select-blood{
+  font-size: 15px;
+} */
 /* Add a hover effect for buttons */
 .form-button:hover {
   color: var(--main-color);
@@ -87,9 +90,10 @@ img.logo {
 }
 
 /* Add padding to containers */
-.container {
+.auth-container {
   text-align: center;
   padding: 16px;
+  min-height: 10vh;
 }
 /* The "Forgot password" text */
 span.psw {
@@ -134,8 +138,7 @@ span.psw {
   }
 }
 @media (max-width: 500px) {
-
-form{
-  width: 100% !important;
-}
+  form {
+    width: 100% !important;
+  }
 }
