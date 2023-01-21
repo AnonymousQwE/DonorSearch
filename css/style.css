@@ -7,6 +7,7 @@
 @import "./auth.css";
 @import "./where.css";
 @import "./bonus.css";
+@import "./donor-list.css";
 
 :root {
   --main-color: red;

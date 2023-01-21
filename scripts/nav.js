@@ -4,8 +4,12 @@ navItemsList = [
   { title: "Где сдать кровь", link: "where" },
 ];
 navAuthItems = [
-  { title: "Список доступных доноров", link: "donor-list" },
-  { title: "Список доступных клиник", link: "clinic-list" },
+  {
+    title: "Список доступных доноров",
+    link: "donor-list",
+    script: donorsList,
+  },
+  { title: "Список доступных клиник", link: "clinic-list", script: "" },
 ];
 
 function createNavButtons(listBtn) {
@@ -30,7 +34,9 @@ function renderNavItems() {
   buttons.map((b, i) => {
     navList.append(b);
     b.addEventListener("click", () => {
-      i === 0 ? rerenderHome() : currentUser.renderPage(currentNav[i].link);
+      i === 0
+        ? rerenderHome()
+        : currentUser.renderPage(currentNav[i].link, currentNav[i].script);
     });
   });
 
@@ -85,7 +91,7 @@ function formAction(action) {
           user.set("email", email);
           user.set("fullname", fullname);
           user.set("role", type);
-          user.set("image", "/../img/newLogoIcon.svg");
+          user.set("image", "img/newLogoIcon.svg");
           user.set("donationCount", 0);
           user.set("bloodType", blood + blood2);
 
