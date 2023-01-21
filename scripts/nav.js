@@ -76,6 +76,8 @@ function formAction(action) {
           const fullname = form.fullname.value;
           const password = form.password.value;
           const type = form.type.value;
+          const blood = form.blood.value;
+          const blood2 = form.blood2.value;
 
           var user = new Parse.User();
           user.set("username", username);
@@ -84,6 +86,8 @@ function formAction(action) {
           user.set("fullname", fullname);
           user.set("role", type);
           user.set("image", "/../img/newLogoIcon.svg");
+          user.set("donationCount", 0);
+          user.set("bloodType", blood + blood2);
 
           user
             .signUp()
@@ -94,7 +98,10 @@ function formAction(action) {
                   " and email: " +
                   user.get("email")
               );
+              currentUser.serverSet();
+              firstRender();
             })
+
             .catch(function (error) {
               console.log("Error: " + error.code + " " + error.message);
             });

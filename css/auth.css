@@ -59,7 +59,10 @@ input[type="password"] {
   border-bottom: 1px solid var(--main-color);
   transition: 0.3s;
   padding: 5px;
-  margin-top: 5px;
+  margin-top: 15px;
+}
+.auth-btn{
+  margin-top: 20px;
 }
 .select-type {
   position: relative !important;
