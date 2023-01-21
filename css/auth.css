@@ -35,6 +35,7 @@
 
 /* Bordered form */
 form {
+  width: 30vw;
   cursor: default;
   padding: 10px 30px;
   border: 3px solid #f1f1f1;
@@ -50,7 +51,6 @@ input[type="password"] {
   display: block;
   border: 1px solid #ccc;
   box-sizing: border-box;
-  text-align: center;
 }
 
 .form-button {
@@ -59,6 +59,10 @@ input[type="password"] {
   border-bottom: 1px solid var(--main-color);
   transition: 0.3s;
   padding: 5px;
+  margin-top: 5px;
+}
+.select-type {
+  position: relative !important;
 }
 /* Add a hover effect for buttons */
 .form-button:hover {
@@ -84,7 +88,6 @@ img.logo {
   text-align: center;
   padding: 16px;
 }
-
 /* The "Forgot password" text */
 span.psw {
   float: right;
@@ -103,4 +106,33 @@ span.psw {
   cursor: pointer;
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
   color: var(--sec-color);
+}
+
+@media (max-width: 1230px) {
+  form {
+    width: 40vw;
+  }
+}
+
+@media (max-width: 936px) {
+  form {
+    width: 50vw;
+  }
+  input[type="text"],
+  input[type="password"] {
+    max-width: 100%;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 620px) {
+  form {
+    width: 74vw !important;
+  }
+}
+@media (max-width: 500px) {
+
+form{
+  width: 100% !important;
+}
 }

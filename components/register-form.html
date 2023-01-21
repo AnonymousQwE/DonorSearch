@@ -1,35 +1,35 @@
 <form name="register" style="border: 1px solid #ccc">
-  <div class="container">
-    <div class="imgcontainer">
-      <img src="img/newLogoIcon.svg" alt="Logo" class="logo" />
-    </div>
-
-    <label for="email"><b>Почта</b></label>
-    <input type="text" placeholder="Email" name="email" required />
-
-    <label for="username"><b>Имя пользователя</b></label>
-    <input type="text" placeholder="Username" name="username" required />
-    <label for="fullname"><b>Полное имя или название клиники</b></label>
-    <input type="text" placeholder="Fullname" name="fullname" required />
-
-    <label for="password"><b>Пароль</b></label>
-    <input type="password" placeholder="Password" name="password" required />
-
-    <label>
-      <select required name="type">
-        <option value="donor">Я являюсь донором</option>
-        <option value="clinic" selected>Я представляю клинику</option>
-      </select>
-    </label>
-
-    <div class="clearfix">
-      <button id="actionBtn" type="submit" class="form-button">
-        Зарегистрироваться
-      </button>
-    </div>
-    <p class="form-footer">
-      Уже есть аккаунт?
-      <a id="changeActionBtn">Войти</a>
-    </p>
+  <div class="imgcontainer">
+    <img src="img/newLogoIcon.svg" alt="Logo" class="logo" />
   </div>
+  <div class="auth-container">
+    <input type="text" placeholder="Ваш Email" name="email" required />
+
+    <input
+      type="text"
+      placeholder="Ваше Имя Пользователя"
+      name="username"
+      required
+    />
+    <input type="text" placeholder="Ваше Полное Имя" name="fullname" required />
+
+    <input type="password" placeholder="Ваш Пароль" name="password" required />
+
+    <div>
+      <label class="select-type">
+        <select required name="type">
+          <option value="donor">Я являюсь донором</option>
+          <option value="clinic" selected>Я представляю клинику</option>
+        </select>
+      </label>
+    </div>
+
+    <button id="actionBtn" type="submit" class="form-button">
+      Зарегистрироваться
+    </button>
+  </div>
+  <span class="psw">
+    Уже есть аккаунт?
+    <a id="changeActionBtn">Войти</a>
+  </span>
 </form>
