@@ -32,7 +32,6 @@ function donorsList() {
   document.querySelectorAll(".accordion").forEach((el) => {
     el.addEventListener("click", () => {
       let content = el.nextElementSibling;
-      // console.log(content);
 
       if (content.style.maxHeight) {
         document
@@ -46,8 +45,8 @@ function donorsList() {
       }
     });
   });
+  GetDonors();
 }
-
 const search = () => {
   const searchBox = document.getElementById("input").value.toUpperCase();
   const items = document.getElementById("table-users");
@@ -68,3 +67,36 @@ const search = () => {
     }
   }
 };
+
+let donorsServerList;
+async function GetDonors() {
+  const query = new Parse.Query("User");
+  try {
+    let donors = await query.find();
+    donorsServerList = donors.filter((donor) => {
+      return donor.attributes.role === "donor" ? true : false;
+    });
+  } catch {
+    console.log("error");
+  }
+  const donorsTable = document.getElementById("tableDonors");
+  const donorsHTML = donorsServerList.map((donor) => {
+    const donorHTML = `<tr class="type">
+    <td>1</td>
+    <td>
+      <img
+        src=${donor.attributes.image}
+        alt="donor-image"
+        width="100"
+        height="100"
+      />
+    </td>
+    <td class="table-username">${donor.attributes.fullname}</td>
+    <td id="table-blood">${donor.attributes.bloodType}</td>
+    <td>${donor.attributes.bloodRez}</td>
+    <td>${donor.attributes.donationCount}</td>
+  </tr>`;
+    donorsTable.innerHTML += donorHTML;
+  });
+  console.log(donorsTable);
+}

@@ -92,7 +92,8 @@ function formAction(action) {
           user.set("role", type);
           user.set("image", "img/newLogoIcon.svg");
           user.set("donationCount", 0);
-          user.set("bloodType", blood + blood2);
+          user.set("bloodType", blood);
+          user.set("bloodRez", blood2);
 
           user
             .signUp()
