@@ -88,6 +88,7 @@ async function GetDonors() {
       <img
         src=${donor.attributes.image}
         alt="donor-image"
+        class="donor-image"
         width="100"
         height="100"
       />

@@ -19,6 +19,7 @@ function clinicsList() {
       <img
         src=${clinic.attributes.image}
         alt="donor-image"
+        class="donor-image"
         width="100"
         height="100"
       />
