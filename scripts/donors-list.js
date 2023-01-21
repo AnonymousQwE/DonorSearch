@@ -1,6 +1,5 @@
 function donorsList() {
   function filterTрroughButton() {
-    console.log("FILTER!!");
     const buttons = document.querySelectorAll(".button-filter");
     const types = document.querySelectorAll(".type");
 

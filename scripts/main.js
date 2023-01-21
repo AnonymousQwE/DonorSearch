@@ -8,7 +8,7 @@ function firstRender() {
   currentUser.renderPage(currentPage, () => {
     currentUser.serverSet();
     const bannerButton = document.querySelector("#bannerSignUp");
-    bannerButton.addEventListener("click", () => {
+    bannerButton?.addEventListener("click", () => {
       currentUser.renderPage("where");
     });
   });

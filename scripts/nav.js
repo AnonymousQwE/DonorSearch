@@ -66,7 +66,6 @@ function formAction(action) {
 
   switch (action) {
     case "register":
-      console.log("register");
       includeHTML("components/register-form.html", dialogContent, () => {
         actionBtn = document.querySelector("#actionBtn");
         changeActionBtn = document.getElementById("changeActionBtn");
@@ -109,7 +108,7 @@ function formAction(action) {
             })
 
             .catch(function (error) {
-              console.log("Error: " + error.code + " " + error.message);
+              alert("Error: " + error.message);
             });
         });
       });
@@ -117,7 +116,6 @@ function formAction(action) {
       break;
 
     case "login":
-      console.log("login");
       includeHTML("components/login-form.html", dialogContent, () => {
         actionBtn = document.querySelector("#actionBtn");
         changeActionBtn = document.getElementById("changeActionBtn");
@@ -145,17 +143,15 @@ function formAction(action) {
               location.reload();
             })
             .catch(function (error) {
-              console.log("Error: " + error.code + " " + error.message);
+              alert("Error: " + error.message);
             });
         });
       });
       break;
     case "profile":
-      console.log("profile");
       includeHTML("components/user-profile.html", dialogContent, ProfileAction);
       break;
     default:
-      console.log("default");
       break;
   }
 }
