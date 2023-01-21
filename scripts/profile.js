@@ -14,11 +14,13 @@ const ProfileAction = () => {
 
   currentUser.isAdmin ? "" : profileAdminBtn.classList.add("none");
   bloodHTML.innerHTML =
-    currentUser.user.attributes.role === "donor" &&
-    `<p>Ваша группа крови:</p> <p class="profile-item__current" id="blood">${currentUser.user.attributes.bloodType}</p>`;
+    currentUser.user.attributes.role === "donor"
+      ? `<p>Ваша группа крови:</p> <p class="profile-item__current" id="blood">${currentUser.user.attributes.bloodType}</p>`
+      : "";
   donationHTML.innerHTML =
-    currentUser.user.attributes.role === "donor" &&
-    `<p>Колличество Донаций:</p> <p class="profile-item__current" id="donation">${currentUser.user.attributes.donationCount}</p>`;
+    currentUser.user.attributes.role === "donor"
+      ? `<p>Колличество Донаций:</p> <p class="profile-item__current" id="donation">${currentUser.user.attributes.donationCount}</p>`
+      : "";
   profileUsername.innerHTML =
     currentUser.user.attributes.role === "clinic"
       ? `<p>Название клиники:</p> <p class="profile-item__current" id="username">${currentUser.user.attributes.fullname}</p>`
